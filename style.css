@@ -1,38 +1,252 @@
-* {
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(blueviolet, aqua);
 }
 
-body {
+.grid {
+    width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
-    font-family: sans-serif;
-    color: white;
+
+    display: grid;
+    grid-template-columns: 24px repeat(12, 1fr) 24px;
+    grid-template-rows: repeat(6, 1fr);
 }
 
-.location, 
-.temperature {
-    height: 30vh;
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+/* - Card - */
+
+.card {
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px 5px rgba(0, 0, 0, 0.1);
+
+    grid-column: 4/12;
+    grid-row: 2/6;
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr);
 }
 
-.temperature {
-    flex-direction: column;
+/* - Hora / Dara */
+
+.dateContainer {
+    grid-column: 1/4;
+    grid-row: 1/2;
 }
 
-.degree-section {
-    display: flex;
-    cursor: pointer;
+#hour {
+    margin: 12px 0px 12px 12px;
+
+    color: rgba(255, 255, 255, 1);
+    text-align: start;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 500;
 }
 
-.degree-section span {
-    margin: 10px;
+#date {
+    margin: 12px 0 12px 12px;
+
+    color: rgba(255, 255, 255, 1);
+    text-align: start;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 500;
 }
+
+/* - Temperatura - */
+
+.tempContainer {
+    grid-column: 4/6;
+    grid-row: 1/2;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+}
+
+.tempContainer p {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin: 0;
+
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.icon {
+    grid-column: 4/6;
+    grid-row: 2/3;
+
+    background: url("weatherIcons/png/002-windy.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* - Info - */
+
+.infoContainer {
+    grid-column: 4/6;
+    grid-row: 3/4;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.infoContainer p {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin: 0;
+
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+/* - Compor de Busca - */
+
+.searchContainer {
+    grid-column: 7/9;
+    grid-row: 1/2;
+}
+
+#search {
+    width: calc(100% - 12px);
+    margin: 12px 12px 0 0;
+ 
+    border: none;
+    background: transparent;
+
+    color: rgba(255, 255, 255, 1);
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#search::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#search:focus {
+    color: rgba(255, 255, 255, 1);
+    outline: none;
+    background: transparent;
+}
+
+/* - infoLeft - */
+
+.infoLeft {
+    grid-column: 2/3;
+    grid-row: 2/3;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.infoLeft p {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin: 12px 0 12px 0;
+
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.iconLeft {
+    grid-column: 1/2;
+    grid-row: 2/3;
+
+    background: url("weatherIcons/png/043-drops.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+/* - infoRight - */
+
+.infoRight {
+    grid-column: 7/8;
+    grid-row: 2/3;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.infoRight p {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin: 12px 0 12px 0;
+
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.iconRight {
+    grid-column: 1/2;
+    grid-row: 2/3;
+
+    background: url("weatherIcons/png/045-storm.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* - Bottom - */
+
+.bottomContainer {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 10px 10px;
+
+    grid-column: 1/9;
+    grid-row: 4/5;
+}
+
+#city {
+    margin: 12px 0px 12px 12px;
+
+    color: rgba(255, 255, 255, 1);
+    text-align: start;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+#country {
+    margin: 12px 0 12px 12px;
+
+    color: rgba(255, 255, 255, 1);
+    text-align: start;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+
+
+

@@ -2,29 +2,56 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link 
+        rel="stylesheet" 
+        href="style.css"
+    >
     <title>Weather-app</title>
 </head>
 
 <body>
 
-    <div class="location">
-        <h1 class="timezone">Timezone</h1>
-        <p id="cidade">São Paulo, BR</p>
-        <p>Icon</p>
-    </div>
-    <div class="temperature">
-        <div class="degree-section">
-            <h2 class="degree">25</h2>
-            <span>C</span>
+    <div class="grid">
+        <div class="card">
+            <div class="dateContainer">
+                <p id="hour">18:00</p>
+                <p id="date">28 novembro 2019</p>
+            </div>
+            <div class="tempContainer">
+                <p>25°c</p>
+            </div>
+            <div class="icon"></div>
+            <div class="infoContainer">
+                <p>nublado</p>
+            </div>
+            <div class="searchContainer">
+                <input
+                    id="search" 
+                    type="text"                        
+                    value=""
+                    placeholder="pesquisar..."
+                >
+            </div>
+            <div class="infoLeft">
+                <p id="textLeft">19%</p>
+                <div class="iconLeft"></div>
+            </div>
+            <div class="infoRight">
+                <p id="textRight">20km</p>
+                <div class="iconRight"></div>
+            </div>
+            <div class="bottomContainer">
+                <p id="city">são paulo</p>
+                <p id="country">brasil</p>
+            </div>
         </div>
-        <div class="description">description</div>
     </div>
-
 </body>
 
 <footer>
+
     <script src="app.js"></script>  
+
 </footer>
 
 </html>
